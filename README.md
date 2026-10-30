@@ -72,16 +72,16 @@ requirements.txt       Python dependencies for the source script
  USB-C (charge)  |                                                |
  -------------->  |  B+   ----------------------------> LiPo (+)   |
                  |  B-   ----------------------------> LiPo (-)   |
-                 |  OUT+ --> [SS12D00G switch] ------> XIAO 5V    |
+                 |  OUT+ --> [SS12D00G switch] ------> XIAO 3V    |
                  |  OUT- ----------------------------> XIAO GND   |
                  +------------------------------------------------+
 ```
 
 - **Battery:** B+ and B- on the HW-373 go to the battery's + and -. Solder the battery last and double-check polarity.
-- **Switch:** it is a 3-pin SPDT. Connect OUT+ to the **middle** pin and one outer pin to the XIAO's 5V pad. Leave the other outer pin unconnected.
-- **XIAO:** connect the 5V and GND pads (castellated edge, near the USB-C port). The battery voltage feeds the on-board regulator through the 5V pad.
+- **Switch:** it is a 3-pin SPDT. Connect OUT+ to the **middle** pin and one outer pin to the XIAO's 3V pad. Leave the other outer pin unconnected.
+- **XIAO:** connect the 3V and GND pads (castellated edge, near the USB-C port). The battery voltage feeds the on-board regulator through the 3V pad.
 - **Do not** connect battery voltage to the 3V3 pin: a full LiPo is 4.2 V.
-- To be safe, switch the pen off before plugging a USB cable into the XIAO, or add a Schottky diode in series with the 5V feed.
+- To be safe, switch the pen off before plugging a USB cable into the XIAO, or add a Schottky diode in series with the 3V feed.
 - The rails cover about 0.6 mm of each long edge of both boards. Solder wires before sliding the boards in, keep joints low-profile, and use thin wire (about 30 AWG).
 - Run the wires along the free lanes on either side of the battery.
 

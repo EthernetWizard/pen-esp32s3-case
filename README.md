@@ -1,8 +1,10 @@
-# Pen-Style ESP32-S3 Case
+# Pentest Case
 
-A compact, pen-shaped, 3D-printed enclosure for a **battery-powered XIAO ESP32-S3**. It has its own USB-C charging port at one end, a USB-C programming port at the other, and a slide power switch on the side. Two printed parts, no screws, no supports.
+Pentest Case is a compact, 3D-printable pen-style enclosure for a battery-powered **Seeed Studio XIAO ESP32-S3**. The design has a USB-C charging port at one end, a USB-C programming port at the other, and a side-mounted slide power switch. It prints in two parts without screws or supports.
 
-![Assembled case](docs/pen-render.png)
+[Print files](stl/) · [Printing](#printing) · [Assembly](#assembly)
+
+![CAD render of the assembled Pentest Case](docs/pen-render.png)
 
 **Size:** 90.9 × 21.2 × 11.7 mm
 **Version:** 1.0
@@ -38,13 +40,10 @@ Both USB-C ports are reachable from outside: the **tail port charges the battery
 
 ## Files
 
-```
-stl/pen_top.stl        top half   (print open side down)
-stl/pen_bottom.stl     bottom lid (print flat, lip pointing up)
-src/pen_case.py        parametric source that generates both STLs
-docs/                  images
-requirements.txt       Python dependencies for the source script
-```
+- [Top shell STL](stl/pen_top.stl) — print open side down.
+- [Bottom lid STL](stl/pen_bottom.stl) — print flat, lip pointing up.
+- [Parametric source](src/pen_case.py) — Python model for both parts.
+- [CAD renders](docs/) — assembly, interior, and cross section.
 
 ---
 
@@ -100,14 +99,9 @@ requirements.txt       Python dependencies for the source script
 
 ## Customizing
 
-Everything is generated from `src/pen_case.py`. Edit the parameters at the top of the file, then regenerate:
+The [parametric model](src/pen_case.py) uses NumPy, trimesh, and manifold3d. The repository does not currently include a dependency manifest or verified version pins. If you only want to print the case, use the [included STLs](stl/) without running the model.
 
-```bash
-pip install -r requirements.txt
-python src/pen_case.py
-```
-
-The STLs are written to `stl/`. Useful parameters:
+To change the design, start with the parameters at the top of the source file. Useful parameters:
 
 | Parameter | Meaning | Default |
 |---|---|---|

@@ -69,7 +69,7 @@ Both USB-C ports are reachable from outside: the **tail port charges the battery
 ```
                  +-------------------- HW-373 --------------------+
  USB-C (charge)  |                                                |
- -------------->  |  B+   ----------------------------> LiPo (+)   |
+ --------------> |  B+   ----------------------------> LiPo (+)   |
                  |  B-   ----------------------------> LiPo (-)   |
                  |  OUT+ --> [SS12D00G switch] ------> XIAO 3V    |
                  |  OUT- ----------------------------> XIAO GND   |
